@@ -277,6 +277,15 @@
             border: none;
         }
         
+        /* Fix for oversized images */
+        .album-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 991.98px) {
             .album-container {
@@ -391,15 +400,7 @@
             <div class="album-container">
                 <!-- Ảnh cưới -->
                 <div class="album-item" data-category="pre-wedding">
-                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMpL33jtmSn3eQ0zDaKfzbhFerpNzrNrRSX5ozQZemtp49yxiEKTrptJ5L1xHVXu9pY5oPywcQmPiE_wi-se5vs1VgR0ONDgsYVty0gnsZEQdQB3H3DjgXrR-hwOIJAeBSzklYzzCUlUm_1jhQD5-Fv=w635-h953-s-no-gm?authuser=0" alt="Ảnh cưới" data-caption="Ảnh cưới 
-                        <div class="album-icon">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="album-caption">Ảnh cưới </div>
-                    </div>
-                </div>
-                <div class="album-item" data-category="pre-wedding">
-                    <img src="https://lh3.googleusercontent.com/pw/AP1GczObvAvEypMLA8fnL2kQcTZ7ulardRBrXGClbq4Mv3gKpaVBpCyxlAz49Syuz1-bLKGoo2qtNHqdx3UKtzldW8NzRSJoSCiiYHdkhnkpLSpEJ3HeN_sP-k9kFRLLFC2O3LExt3pzpMQND2Zu_TWCMRjx=w635-h953-s-no-gm?authuser=0g" alt="Ảnh cưới" data-caption="Ảnh cưới ">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMpL33jtmSn3eQ0zDaKfzbhFerpNzrNrRSX5ozQZemtp49yxiEKTrptJ5L1xHVXu9pY5oPywcQmPiE_wi-se5vs1VgR0ONDgsYVty0gnsZEQdQB3H3DjgXrR-hwOIJAeBSzklYzzCUlUm_1jhQD5-Fv=w635-h953-s-no-gm?authuser=0" alt="Ảnh cưới" data-caption="Ảnh cưới">
                     <div class="album-overlay">
                         <div class="album-icon">
                             <i class="fas fa-search-plus"></i>
@@ -408,7 +409,16 @@
                     </div>
                 </div>
                 <div class="album-item" data-category="pre-wedding">
-                    <img src="https://lh3.googleusercontent.com/pw/AP1GczNa0HCmCOubmSILDOk4e6K39epATENRnrqD53oFH0pnowdH7gYQ5cjOY2isOoMzhcbl1TLVbAGmVO0UhAH314YzbZjyd4rFqLIqjrEx_Eg7_L-K4IrnWNp1Bisii9nAv9Y7V2I6sbbaz1B8D3RH9bqX=w635-h953-s-no-gm?authuser=0" alt="Ảnh cưới" data-caption="Ảnh cưới ">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczObvAvEypMLA8fnL2kQcTZ7ulardRBrXGClbq4Mv3gKpaVBpCyxlAz49Syuz1-bLKGoo2qtNHqdx3UKtzldW8NzRSJoSCiiYHdkhnkpLSpEJ3HeN_sP-k9kFRLLFC2O3LExt3pzpMQND2Zu_TWCMRjx=w635-h953-s-no-gm?authuser=0" alt="Ảnh cưới" data-caption="Ảnh cưới">
+                    <div class="album-overlay">
+                        <div class="album-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="album-caption">Ảnh cưới</div>
+                    </div>
+                </div>
+                <div class="album-item" data-category="pre-wedding">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczNa0HCmCOubmSILDOk4e6K39epATENRnrqD53oFH0pnowdH7gYQ5cjOY2isOoMzhcbl1TLVbAGmVO0UhAH314YzbZjyd4rFqLIqjrEx_Eg7_L-K4IrnWNp1Bisii9nAv9Y7V2I6sbbaz1B8D3RH9bqX=w635-h953-s-no-gm?authuser=0" alt="Ảnh cưới" data-caption="Ảnh cưới">
                     <div class="album-overlay">
                         <div class="album-icon">
                             <i class="fas fa-search-plus"></i>
