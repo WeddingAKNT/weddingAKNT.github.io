@@ -199,6 +199,7 @@
                 </li>
                 <li><a href="../le-dam-ngo/index.html">Lễ Dạm Ngỏ</a></li>
                 <li><a href="../le-hoi/index.html" class="active">Lễ Hỏi</a></li>
+                <li><a href="../le-cuoi/index.html">Lễ Cưới</a></li>
                 <li><a href="../album-cuoi/index.html">Album Cưới</a></li>
             </ul>
         </div>
@@ -264,49 +265,8 @@
             <div class="main-video">
                 <div class="main-video-container">
                     <!-- Thay thế bằng iframe từ YouTube hoặc nguồn khác -->
-                    <img src="../assets/images/video-thumbnail.jpg" alt="Video Lễ Hỏi">
-                    <div class="video-play main-play">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="video-grid">
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="../assets/images/video-thumb-1.jpg" alt="Video Lễ Hỏi">
-                        <div class="video-play">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3>Đón Dâu</h3>
-                        <p>Khoảnh khắc đoàn nhà trai đến đón dâu</p>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="../assets/images/video-thumb-2.jpg" alt="Video Lễ Hỏi">
-                        <div class="video-play">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3>Trao Lễ Vật</h3>
-                        <p>Nghi thức trao lễ vật giữa hai họ</p>
-                    </div>
-                </div>
-                <div class="video-item">
-                    <div class="video-thumbnail">
-                        <img src="../assets/images/video-thumb-3.jpg" alt="Video Lễ Hỏi">
-                        <div class="video-play">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3>Trao Nhẫn</h3>
-                        <p>Khoảnh khắc trao nhẫn cưới</p>
-                    </div>
+  
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JMXSbCvjKiQ?si=ej7rZh-BIOcsJl9l" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -356,7 +316,7 @@
             <div class="footer-content">
                 <h2>Cảm Ơn</h2>
                 <p>Cảm ơn quý khách đã đến dự lễ thành hôn của chúng tôi</p>
-                <p>Ngày Tháng Năm</p>
+                <p>05-06/04/2025</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -364,7 +324,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 - Tên Chú Rể & Tên Cô Dâu</p>
+                <p>&copy; 2025 - Ngọc Thảo & Anh Khoa</p>
             </div>
         </div>
     </footer>
@@ -373,31 +333,15 @@
     <script src="../js/smooth-scroll.js"></script>
     <script>
         // Video play buttons
-        const mainPlay = document.querySelector('.main-play');
         const videoPlays = document.querySelectorAll('.video-play');
-        
-        if (mainPlay) {
-            mainPlay.addEventListener('click', function() {
-                // Replace with your actual video URL
-                const videoUrl = "https://www.youtube.com/embed/your-main-video-id?autoplay=1";
-                const iframe = document.createElement('iframe');
-                
-                iframe.setAttribute('src', videoUrl);
-                iframe.setAttribute('allowfullscreen', 'true');
-                
-                const mainVideoContainer = document.querySelector('.main-video-container');
-                mainVideoContainer.innerHTML = '';
-                mainVideoContainer.appendChild(iframe);
-            });
-        }
         
         videoPlays.forEach((play, index) => {
             play.addEventListener('click', function() {
-                // Replace with your actual video URLs
+                // Thay thế bằng URL video thực tế của bạn
                 const videoUrls = [
-                    "https://www.youtube.com/embed/video-id-1?autoplay=1",
-                    "https://www.youtube.com/embed/video-id-2?autoplay=1",
-                    "https://www.youtube.com/embed/video-id-3?autoplay=1"
+                    "https://www.youtube.com/embed/JMXSbCvjKiQ?si=ej7rZh-BIOcsJl9l?autoplay=1",
+                    "https://www.youtube.com/embed/JMXSbCvjKiQ?si=ej7rZh-BIOcsJl9l?autoplay=1",
+                    "https://www.youtube.com/embed/JMXSbCvjKiQ?si=ej7rZh-BIOcsJl9l?autoplay=1"
                 ];
                 
                 if (index < videoUrls.length) {
