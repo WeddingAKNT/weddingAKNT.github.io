@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đám Cưới - Anh Khoa & Ngọc Thảo</title>
     
-    <!-- SEO & Social Sharing Meta Tags -->
     <meta name="description" content="Kỷ niệm lễ thành hôn của Anh Khoa & Ngọc Thảo - 06/04/2025">
     <meta property="og:title" content="Kỷ niệm Đám Cưới - Ngọc Thảo & Anh Khoa">
     <meta property="og:description" content="Kỷ niệm lễ thành hôn của Anh Khoa & Ngọc Thảo - 06/04/2025">
@@ -15,21 +14,19 @@
     <meta property="og:url" content="https://weddingaknt.github.io/">
     <meta property="og:type" content="website">
     
-    <!-- Favicon -->
     <link rel="icon" href="https://png.pngtree.com/png-clipart/20191120/original/pngtree-geometric-pink-brush-wedding-logo-free-logo-design-template-png-image_5044811.jpg" type="image/x-icon">
     
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* Custom styles for anniversary countdown */
+        /* Custom styles for anniversary countdown (from original) */
         .anniversary-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 80px 0;
-            margin-top: -100px;
+            margin-top: -100px; /* Điều chỉnh nếu cần thiết sau khi thêm navbar fixed */
             position: relative;
         }
         
@@ -103,7 +100,7 @@
             font-weight: 600;
         }
         
-        .celebration-message {
+        .celebration-message { /* Style này áp dụng cho cả hero và anniversary section */
             background: var(--white-color);
             border-radius: 20px;
             padding: 40px;
@@ -158,7 +155,7 @@
             margin-top: 20px;
         }
         
-        /* Floating hearts animation */
+        /* Floating hearts animation (from original) */
         .hearts {
             position: absolute;
             width: 100%;
@@ -192,25 +189,21 @@
             }
         }
         
-        /* Responsive adjustments */
+        /* Responsive adjustments (from original) */
         @media (max-width: 768px) {
             .anniversary-title {
                 font-size: 2.5rem;
             }
-            
             .anniversary-counter {
                 gap: 15px;
             }
-            
             .counter-item {
                 min-width: 100px;
                 padding: 20px 15px;
             }
-            
             .counter-number {
                 font-size: 2rem;
             }
-            
             .celebration-message {
                 padding: 30px 20px;
             }
@@ -220,23 +213,55 @@
             .anniversary-counter {
                 gap: 10px;
             }
-            
             .counter-item {
                 min-width: 80px;
                 padding: 15px 10px;
             }
-            
             .counter-number {
                 font-size: 1.5rem;
             }
-            
             .counter-label {
                 font-size: 0.8rem;
             }
         }
+
+        /* ---- CSS MỚI CHO HIỆU ỨNG CUỘN ---- */
+        .scroll-progress-bar-container {
+            position: fixed;
+            top: 0; 
+            left: 0;
+            width: 100%;
+            height: 5px; 
+            background-color: rgba(0, 0, 0, 0.1); 
+            z-index: 1001; 
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: var(--primary-color); 
+            width: 0%; 
+            transition: width 0.05s ease-out; 
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px); 
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* ---- KẾT THÚC CSS MỚI ---- */
+
     </style>
 </head>
 <body>
+    <div class="scroll-progress-bar-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <div class="logo">WEDDING</div>
@@ -279,7 +304,6 @@
             <a href="#overview" class="btn scroll-link">Xem Kỷ Niệm</a>
         </div>
         
-        <!-- Floating hearts -->
         <div class="hearts">
             <div class="heart" style="left: 10%; animation-delay: 0s;">♥</div>
             <div class="heart" style="left: 20%; animation-delay: 1s;">♥</div>
@@ -293,34 +317,33 @@
         </div>
     </header>
 
-    <!-- Anniversary Section -->
     <section class="anniversary-section">
         <div class="container">
             <div class="anniversary-content">
-                <h2 class="anniversary-title">Kỷ Niệm Ngày Cưới</h2>
-                <p class="anniversary-subtitle">Chúng tôi đã kết hôn được</p>
-                <p class="wedding-date">Kể từ ngày 06/04/2025</p>
+                <h2 class="anniversary-title animate-on-scroll">Kỷ Niệm Ngày Cưới</h2>
+                <p class="anniversary-subtitle animate-on-scroll">Chúng tôi đã kết hôn được</p>
+                <p class="wedding-date animate-on-scroll">Kể từ ngày 06/04/2025</p>
                 
                 <div class="anniversary-counter" id="anniversaryCounter">
-                    <div class="counter-item">
+                    <div class="counter-item animate-on-scroll">
                         <span class="counter-number" id="months">0</span>
                         <span class="counter-label">Tháng</span>
                     </div>
-                    <div class="counter-item">
+                    <div class="counter-item animate-on-scroll">
                         <span class="counter-number" id="days">0</span>
                         <span class="counter-label">Ngày</span>
                     </div>
-                    <div class="counter-item">
+                    <div class="counter-item animate-on-scroll">
                         <span class="counter-number" id="hours">0</span>
                         <span class="counter-label">Giờ</span>
                     </div>
-                    <div class="counter-item">
+                    <div class="counter-item animate-on-scroll">
                         <span class="counter-number" id="minutes">0</span>
                         <span class="counter-label">Phút</span>
                     </div>
                 </div>
                 
-                <div class="celebration-message">
+                <div class="celebration-message animate-on-scroll">
                     <div class="celebration-icon">
                         <i class="fas fa-rings-wedding"></i>
                     </div>
@@ -338,12 +361,12 @@
 
     <section id="overview" class="section overview">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title animate-on-scroll">
                 <h2>Hành Trình Tình Yêu</h2>
                 <div class="divider"></div>
             </div>
             <div class="cards">
-                <div class="card">
+                <div class="card animate-on-scroll">
                     <div class="card-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
@@ -354,7 +377,7 @@
                         <a href="thiep-nha-gai/index.html" class="btn-small">Thiệp Nhà Gái</a>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card animate-on-scroll">
                     <div class="card-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
@@ -362,7 +385,7 @@
                     <p>Bước đầu tiên trong hành trình kết duyên</p>
                     <a href="le-dam-ngo/index.html" class="btn-small">Xem Kỷ Niệm</a>
                 </div>
-                <div class="card">
+                <div class="card animate-on-scroll">
                     <div class="card-icon">
                         <i class="fas fa-gift"></i>
                     </div>
@@ -370,7 +393,7 @@
                     <p>Nghi lễ truyền thống đầy ý nghĩa</p>
                     <a href="le-hoi/index.html" class="btn-small">Xem Kỷ Niệm</a>
                 </div>
-                <div class="card">
+                <div class="card animate-on-scroll">
                     <div class="card-icon">
                         <i class="fas fa-camera"></i>
                     </div>
@@ -384,12 +407,12 @@
 
     <section class="section video-section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title animate-on-scroll">
                 <h2>Video Lễ Hỏi</h2>
                 <div class="divider"></div>
                 <p>Khoảnh khắc đáng nhớ trong lễ hỏi của chúng tôi</p>
             </div>
-            <div class="video-container">
+            <div class="video-container animate-on-scroll">
                 <iframe width="100%" height="455" src="https://www.youtube.com/embed/JMXSbCvjKiQ?si=ej7rZh-BIOcsJl9l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
@@ -397,32 +420,32 @@
 
     <section class="section gallery-preview">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title animate-on-scroll">
                 <h2>Gallery</h2>
                 <div class="divider"></div>
                 <p>Những khoảnh khắc đẹp nhất từ hành trình tình yêu</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item">
+                <div class="gallery-item animate-on-scroll">
                     <img src="https://lh3.googleusercontent.com/pw/AP1GczNsRQeYcTQyH-kT0RWcZfprLNvQeI9YgYKOnJIjJJDr--eXkwpNAjGT-Ads6JAyGFz6Ipgjc1TxEMrG1Os8GR6kNON1EN7PKPjIh4iWNpiry1Ay5zmBS3lToTbrHFEyrqm8Ct8Ua39Z284_uEKRxHh7=w635-h953-s-no-gm?authuser=0" alt="Gallery Image">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item animate-on-scroll">
                     <img src="https://lh3.googleusercontent.com/pw/AP1GczNAUEVa9tt-7MK0kYFbSNlN2f0MuBL2UJDBl1Wq43ofsR9GHa5F2ct31tVd_zVIoKp_F5WY1svVQSJYHijHxUyq60nH8Vdy7fJoRySAevGhkLrjwHagZ6BCAE9jp5UHstJFUGbwQ2fgrROkYx8te76s=w635-h953-s-no-gm?authuser=0" alt="Gallery Image">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item animate-on-scroll">
                     <img src="https://lh3.googleusercontent.com/pw/AP1GczNa0HCmCOubmSILDOk4e6K39epATENRnrqD53oFH0pnowdH7gYQ5cjOY2isOoMzhcbl1TLVbAGmVO0UhAH314YzbZjyd4rFqLIqjrEx_Eg7_L-K4IrnWNp1Bisii9nAv9Y7V2I6sbbaz1B8D3RH9bqX=w635-h953-s-no-gm?authuser=0" alt="Gallery Image">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item animate-on-scroll">
                     <img src="https://lh3.googleusercontent.com/pw/AP1GczMBM9hou9exebK1vXYGklk-r2fHWmG3MhnEyLUHnLcM9J81Raxu7IQMlDdJNaJy7WNE3H_ZbnCtvChAiI1FwN03FtXqATDtM938tLRAAwRMZdTvUFcWOrwXUa7Ihu2rR_bWUqZfAJh-freXlqq7Pt0s=w635-h953-s-no-gm?authuser=0" alt="Gallery Image">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item animate-on-scroll">
                     <img src="https://lh3.googleusercontent.com/pw/AP1GczPs9W8hvtiTC8TdLHPRcYkH0i2Le-jpF2cs2bwFpxFYp014IzejRG7rNZ-duzEihAys4EK6RGzsANpJDQMg79kB1NZrTYLTyebrWrqLYioO4rb2Z2hzZVKMuw7E0qMnxwCh-ck3BKbzTqc8GGbTcfVo=w635-h953-s-no-gm?authuser=0" alt="Gallery Image">
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item animate-on-scroll">
                     <img src="https://lh3.googleusercontent.com/pw/AP1GczOtnloM71FAWHUbephjkqNILy9ML_RfDuNCPSraUqzq0pR0AxchBG8UIlukLD_zVW9WfFvendRbz97zA1kcWIMEuf8ptjFG7A_dY2t3CglZgFKP7jUxQsRmtobMCju5xduWHcEObOx8ydDnmDk5Eq6p=w635-h953-s-no-gm?authuser=0" alt="Gallery Image">
                 </div>
             </div>
-            <div class="text-center">
+            <div class="text-center animate-on-scroll">
                 <a href="album-cuoi/index.html" class="btn">Xem Tất Cả</a>
             </div>
         </div>
@@ -441,54 +464,14 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 - Anh Khoa & Ngọc Thảo</p>
+                <p>© 2025 - Anh Khoa & Ngọc Thảo</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Anniversary counter
-        function updateAnniversaryCounter() {
-            const weddingDate = new Date('April 06, 2025 11:00:00').getTime();
-            const now = new Date().getTime();
-            const timePassed = now - weddingDate;
-            
-            if (timePassed > 0) {
-                // Calculate time since wedding
-                const months = Math.floor(timePassed / (1000 * 60 * 60 * 24 * 30.44));
-                const days = Math.floor((timePassed % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timePassed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timePassed % (1000 * 60 * 60)) / (1000 * 60));
-                
-                document.getElementById('months').innerHTML = months;
-                document.getElementById('days').innerHTML = days;
-                document.getElementById('hours').innerHTML = hours;
-                document.getElementById('minutes').innerHTML = minutes < 10 ? '0' + minutes : minutes;
-            } else {
-                // If somehow the wedding date is in the future, show 0s
-                document.getElementById('months').innerHTML = '0';
-                document.getElementById('days').innerHTML = '0';
-                document.getElementById('hours').innerHTML = '0';
-                document.getElementById('minutes').innerHTML = '0';
-            }
-        }
-        
-        // Update counter every minute
-        updateAnniversaryCounter();
-        setInterval(updateAnniversaryCounter, 60000);
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
             const menuToggle = document.querySelector('.menu-toggle');
             const menu = document.querySelector('.menu');
             
@@ -501,14 +484,11 @@
             
             // Smooth scrolling for anchor links
             const scrollLinks = document.querySelectorAll('.scroll-link');
-            
             scrollLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
-                    
                     if (targetElement) {
                         const navbarHeight = document.querySelector('.navbar').offsetHeight;
                         const targetPosition = targetElement.offsetTop - navbarHeight;
@@ -525,6 +505,82 @@
                     }
                 });
             });
+
+            // Scroll-triggered animations using Intersection Observer
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries, observerInstance) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observerInstance.unobserve(entry.target); // Stop observing once visible
+                        }
+                    });
+                }, { 
+                    threshold: 0.1 // Trigger when 10% of the element is visible
+                });
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+            } else {
+                // Fallback for older browsers: make elements visible immediately
+                animatedElements.forEach(element => {
+                    element.classList.add('is-visible');
+                });
+            }
+        });
+        
+        // Anniversary counter
+        function updateAnniversaryCounter() {
+            const weddingDate = new Date('April 06, 2025 11:00:00').getTime();
+            const now = new Date().getTime();
+            const timePassed = now - weddingDate;
+            
+            const monthsEl = document.getElementById('months');
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+
+            if (timePassed > 0) {
+                const months = Math.floor(timePassed / (1000 * 60 * 60 * 24 * 30.44));
+                const days = Math.floor((timePassed % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timePassed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timePassed % (1000 * 60 * 60)) / (1000 * 60));
+                
+                if(monthsEl) monthsEl.innerHTML = months;
+                if(daysEl) daysEl.innerHTML = days;
+                if(hoursEl) hoursEl.innerHTML = hours;
+                if(minutesEl) minutesEl.innerHTML = minutes < 10 ? '0' + minutes : minutes;
+            } else {
+                if(monthsEl) monthsEl.innerHTML = '0';
+                if(daysEl) daysEl.innerHTML = '0';
+                if(hoursEl) hoursEl.innerHTML = '0';
+                if(minutesEl) minutesEl.innerHTML = '0';
+            }
+        }
+        
+        updateAnniversaryCounter();
+        setInterval(updateAnniversaryCounter, 60000);
+        
+        // Combined scroll event listener for Navbar effect and Scroll Progress Bar
+        window.addEventListener('scroll', function() {
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Scroll progress bar
+            const scrollProgressBar = document.querySelector('.scroll-progress-bar');
+            if (scrollProgressBar) { 
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolledPercentage = (scrollTop / scrollHeight) * 100;
+                scrollProgressBar.style.width = scrolledPercentage + '%';
+            }
         });
     </script>
 </body>
